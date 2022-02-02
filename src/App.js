@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
+import { Box, CssBaseline, ThemeProvider } from '@mui/material';
+import theme from './theme';
+import LoginForm from './components/LoginForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
+        flexDirection: 'column'
+      }}>
+        <LoginForm />
+      </Box>
+    </ThemeProvider>
   );
 }
 
